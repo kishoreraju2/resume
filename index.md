@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Your Name - Site Reliability Engineer
+title: R.Kishore Kumar - Site Reliability Engineer
 ---
 
-# Your Name  
+# Kishore Kumar Raju 
 **Site Reliability Engineer | DevOps Engineer**  
-📍 Location | ✉ Email | 🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourprofile)  
+📍 Chennai, India | ✉ kishoreraju.1998@gmail.com | 🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourprofile)  
 
 ---
 
@@ -19,7 +19,7 @@ title: Your Name - Site Reliability Engineer
 
 ## Professional Experience  
 ### Senior Site Reliability Engineer  
-**Company Name** | 2020–Present  
+**Poshmark** | 2020–Present  
 - Led infrastructure migrations (Ubuntu kernel, Redis, OpenSearch) using Terraform, reducing downtime by 30%.  
 - Defended against bot attacks using AWS WAF and CloudFront Edge Functions, blocking 90% malicious traffic.  
 
@@ -27,4 +27,4 @@ title: Your Name - Site Reliability Engineer
 
 ---
 
-**🔗 [Download PDF Resume](#)** | **👨💻 [GitHub](https://github.com/yourprofile)**  
+**🔗 [Download PDF Resume](#)** | **👨💻 [GitHub](https://github.com/kishoreraju2)**  
