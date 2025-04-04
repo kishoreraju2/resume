@@ -5,7 +5,7 @@ title: R.Kishore Kumar - Site Reliability Engineer
 
 # Kishore Kumar Raju 
 **Site Reliability Engineer | DevOps Engineer**  
-📍 Chennai, India | ✉ kishoreraju.1998@gmail.com | 🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourprofile)  
+📍 Chennai, India | ✉ [Mail](kishoreraju.1998@gmail.com) | 🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourprofile)  
 
 ---
 
@@ -27,6 +27,7 @@ title: R.Kishore Kumar - Site Reliability Engineer
 - Defended against bot attacks by implementing AWS WAF rules and CloudFront Edge Functions, reducing malicious traffic by 90%.
 - Upgraded Java Amazon Corretto across 50+ microservices, improving runtime efficiency and patch compliance.
 - Automated Jenkins pipelines for zero-downtime deployments, cutting release cycles from 2 hours to 45 minutes.
+- Designed auto-scaling policies for EC2 clusters, handling 3x traffic surges during peak events.
 
 [Add other sections like Education, Projects, etc.]  
 
