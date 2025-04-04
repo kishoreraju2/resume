@@ -1,0 +1,4 @@
+title: Your Name - Resume
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-optional-front-matter
