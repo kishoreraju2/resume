@@ -21,7 +21,12 @@ title: R.Kishore Kumar - Site Reliability Engineer
 ### Senior Site Reliability Engineer  
 **Poshmark** | 2020–Present  
 - Led infrastructure migrations (Ubuntu kernel, Redis, OpenSearch) using Terraform, reducing downtime by 30%.  
-- Defended against bot attacks using AWS WAF and CloudFront Edge Functions, blocking 90% malicious traffic.  
+- Defended against bot attacks using AWS WAF and CloudFront Edge Functions, blocking 90% malicious traffic.
+- Led large-scale migrations (Ubuntu kernel upgrades, Redis/RabbitMQ/OpenSearch upgrades, Sinatra → Puma) using Terraform and Ansible, reducing downtime by 30%.
+- Architected database right-sizing strategies for new features, optimizing costs by 25% while ensuring scalability.
+- Defended against bot attacks by implementing AWS WAF rules and CloudFront Edge Functions, reducing malicious traffic by 90%.
+- Upgraded Java Amazon Corretto across 50+ microservices, improving runtime efficiency and patch compliance.
+- Automated Jenkins pipelines for zero-downtime deployments, cutting release cycles from 2 hours to 45 minutes.
 
 [Add other sections like Education, Projects, etc.]  
 
