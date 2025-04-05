@@ -1,7 +1,6 @@
 ---
 layout: default
 title: R.Kishore Kumar - Site Reliability Engineer
-![image tooltip here](/image.png)
 ---
 
 # Kishore Kumar Raju 
