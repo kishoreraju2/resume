@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kishore Kumar Raju · Senior SRE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Senior Site Reliability Engineer · Kubernetes · AWS · DevOps · Chennai, India" />
+  <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-alt: #010409;
+      --border: #21262d;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-soft: rgba(56, 139, 253, 0.15);
+      --green: #3fb950;
+      --yellow: #d29922;
+      --red: #f85149;
+      --card-bg: #161b22;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #161b22 0, #02040a 55%, #000 100%);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    /* Header / profile bar */
+    .profile-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #238636, #1f6feb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 28px;
+      color: #ffffff;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 0 1px #000;
+    }
+
+    .profile-main h1 {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .profile-main h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .profile-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 2px 8px;
+      border: 1px solid var(--border);
+      background: rgba(110, 118, 129, 0.15);
+      font-size: 11px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .nav a {
+      position: relative;
+      padding-bottom: 6px;
+      color: var(--muted);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.16s ease-out;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections styled like GitHub repo READMEs */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 0 0 1px #000;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .section-header h3 {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-header h3::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      box-shadow: inset 0 0 0 1px #000;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    /* Skills as GitHub “topics”/tags */
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .topic-pill {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      border: 1px solid rgba(110, 118, 129, 0.4);
+      color: var(--accent);
+      background: var(--accent-soft);
+      white-space: nowrap;
+    }
+
+    .topic-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    /* Experience layout */
+    .exp-item {
+      margin-bottom: 16px;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .exp-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .exp-company {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .exp-meta {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    .exp-bullets {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Projects styled as “pinned repos” */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .repo-card {
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      padding: 12px 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .repo-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .repo-title span {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 500;
+    }
+
+    .repo-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #238636;
+    }
+
+    .repo-desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .repo-meta {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    .lang-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f1e05a;
+    }
+
+    /* Education / certs */
+    .edu-item {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .edu-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+      .profile-bar {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- Profile header -->
+    <header class="profile-bar">
+      <div class="avatar">KR</div>
+      <div class="profile-main">
+        <h1>Kishore Kumar Raju</h1>
+        <h2>Senior Site Reliability Engineer · Kubernetes · AWS</h2>
+        <div class="profile-meta">
+          <span>📍 Chennai, India</span>
+          <span>✉️ <a href="mailto:kishoreraju.1998@gmail.com">kishoreraju.1998@gmail.com</a></span>
+          <span>🐙 <a href="https://github.com/kishoreraju2" target="_blank" rel="noreferrer">github.com/kishoreraju2</a></span>
+          <span class="pill">Open to Senior / Staff SRE</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Top nav -->
+    <nav class="nav">
+      <a href="#summary">Overview</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+    </nav>
+
+    <!-- Summary -->
+    <section id="summary" class="section-card">
+      <div class="section-header">
+        <h3>Professional Summary</h3>
+        <span class="section-tag">README.md</span>
+      </div>
+      <p class="summary">
+        Results-oriented Senior Site Reliability Engineer with 7+ years of experience driving infrastructure reliability, cost optimization, and automation in high-availability cloud environments. Specialist in Kubernetes, AWS, SRE best practices, and mentoring technical teams for improved operability and onboarding. Proven record of reducing deployment times, improving system observability, and leading migration projects for enterprise-scale systems.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section-card">
+      <div class="section-header">
+        <h3>Skills</h3>
+        <span class="section-tag">Topics</span>
+      </div>
+
+      <div class="topic-label">Cloud & Infrastructure</div>
+      <div class="topics">
+        <span class="topic-pill">AWS</span>
+        <span class="topic-pill">OCI</span>
+        <span class="topic-pill">High availability</span>
+        <span class="topic-pill">Disaster Recovery</span>
+      </div>
+
+      <div class="topic-label">Containers & Orchestration</div>
+      <div class="topics">
+        <span class="topic-pill">Kubernetes</span>
+        <span class="topic-pill">Docker</span>
+        <span class="topic-pill">EKS</span>
+      </div>
+
+      <div class="topic-label">Monitoring & Observability</div>
+      <div class="topics">
+        <span class="topic-pill">PagerDuty</span>
+        <span class="topic-pill">Datadog</span>
+        <span class="topic-pill">Kibana</span>
+        <span class="topic-pill">ELK Stack</span>
+      </div>
+
+      <div class="topic-label">Automation & CI/CD</div>
+      <div class="topics">
+        <span class="topic-pill">Jenkins</span>
+        <span class="topic-pill">Terraform</span>
+        <span class="topic-pill">Atlantis</span>
+        <span class="topic-pill">Shell scripting</span>
+        <span class="topic-pill">Python</span>
+      </div>
+
+      <div class="topic-label">Messaging & Serverless</div>
+      <div class="topics">
+        <span class="topic-pill">Kafka</span>
+        <span class="topic-pill">Oracle Functions</span>
+        <span class="topic-pill">API Gateway</span>
+      </div>
+
+      <div class="topic-label">SRE & Leadership</div>
+      <div class="topics">
+        <span class="topic-pill">Incident management</span>
+        <span class="topic-pill">RCA</span>
+        <span class="topic-pill">Post-mortems</span>
+        <span class="topic-pill">On-call</span>
+        <span class="topic-pill">Technical mentoring</span>
+        <span class="topic-pill">Process improvement</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section-card">
+      <div class="section-header">
+        <h3>Professional Experience</h3>
+        <span class="section-tag">activity.log</span>
+      </div>
+
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Senior Site Reliability Engineer</div>
+            <div class="exp-company">Poshmark · Chennai, India</div>
+          </div>
+          <div class="exp-meta">Apr 2022 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Lead AWS cost optimization, including migration from Intel to Graviton instances for significant savings.</li>
+          <li>Architected debugging processes and improved deployment observability across teams.</li>
+          <li>Managed and scaled Kafka clusters for high-throughput, low-latency event streaming.</li>
+          <li>Automated backup log delivery to S3 using Python tools across production and non-prod environments.</li>
+          <li>Owned incident management with PagerDuty; built strong communication and on-call processes.</li>
+          <li>Mentored and onboarded junior engineers, enhancing SRE culture and knowledge sharing.</li>
+          <li>Migrated infrastructure components, notably Elasticsearch, and led tooling and process improvements.</li>
+        </ul>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Site Reliability Engineer</div>
+            <div class="exp-company">Poshmark</div>
+          </div>
+          <div class="exp-meta">Nov 2020 – Apr 2022</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Identified and resolved deployment bottlenecks, reducing deployment times by 40%.</li>
+          <li>Automated AMI creation for Redis, QueueWorkers, and Elasticsearch, accelerating infrastructure recovery and DR.</li>
+          <li>Developed dashboards and alerts for real-time application and log monitoring.</li>
+          <li>Led RCA documentation, implemented monitors to prevent recurring infrastructure issues.</li>
+          <li>Automated Docker/ECR workflows with Jenkins, including version management and EKS deployment.</li>
+          <li>Designed scalable backup log tools using Python and integrated daily S3 backups.</li>
+          <li>Supported feature release planning and infrastructure scaling based on historical load metrics.</li>
+          <li>Collaborated on optimizing Elasticsearch queries and ELK stack logging pipelines.</li>
+        </ul>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Cloud Solution Engineer</div>
+            <div class="exp-company">Oracle · Bangalore, India</div>
+          </div>
+          <div class="exp-meta">Jun 2018 – Nov 2020</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led migration from monolithic to serverless architectures; reduced maintenance and costs using Oracle Functions.</li>
+          <li>Automated migration of 300+ resources from Ravello to OCI; enhanced resource security via API Gateway and Fn Project.</li>
+          <li>Improved infrastructure provisioning using Atlantis and Terraform pull request automation.</li>
+          <li>Supported RESTful service development with JSON-based integrations.</li>
+          <li>Contributed to an in-house migration tool for OCI-C to OCI resource transitions.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section-card">
+      <div class="section-header">
+        <h3>Notable Projects</h3>
+        <span class="section-tag">Pinned repositories</span>
+      </div>
+
+      <div class="projects-grid">
+        <div class="repo-card">
+          <div class="repo-title">
+            <span class="repo-dot"></span>
+            <span>k8s-backup-logs-tool</span>
+          </div>
+          <p class="repo-desc">
+            Kubernetes-based backup logs tool that automates daily log backups for all subsystems, deployable at scale to S3.
+          </p>
+          <div class="repo-meta">
+            <span><span class="lang-dot"></span>Python</span>
+            <span>k8s · S3 · Cron</span>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div class="repo-title">
+            <span class="repo-dot"></span>
+            <span>aws-instance-migration</span>
+          </div>
+          <p class="repo-desc">
+            Infrastructure migration of workloads from Intel-based instances to AWS Graviton to reduce cost and improve performance.
+          </p>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#3572A5;"></span>Terraform</span>
+            <span>AWS · EC2 · Graviton</span>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div class="repo-title">
+            <span class="repo-dot"></span>
+            <span>serverless-webapp-refactor</span>
+          </div>
+          <p class="repo-desc">
+            Refactored WebApp from monolith to serverless using Oracle Functions and API Gateway for scalable, low-maintenance infrastructure.
+          </p>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#f1e05a;"></span>JavaScript</span>
+            <span>Oracle Functions · API Gateway</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section-card">
+      <div class="section-header">
+        <h3>Education</h3>
+        <span class="section-tag">education.yml</span>
+      </div>
+      <div class="edu-item">
+        <strong>B.Tech in Computer Science</strong>
+        <div>Amrita Vishwa Vidyapeetham, Coimbatore</div>
+        <div class="edu-meta">May 2018 · CGPA: 7.8</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Built with ❤️ and hosted on GitHub Pages.
+    </div>
+  </main>
+</body>
+</html>
